@@ -1,0 +1,20 @@
+{
+    "name": "modal-blocker",
+    "version": "1.0",
+    "description": "Remove login prompts, pay walls, and other modal elements from webpages",
+    "browser_action": {
+        "default_title": "No Modal - Goodbye and Good Riddance",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [ "<all_urls>" ],
+            "run-at": "document-idle",
+            "js": [ "remove-modal.js" ]
+        }
+    ],
+    "permissions": [
+        "activeTab"
+    ],
+    "manifest_version": 2
+}
